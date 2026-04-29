@@ -1,0 +1,31 @@
+Building AI Agent from Scratch
+Piyush Garg
+https://www.youtube.com/watch?v=vUYnRGotTbo
+
+Building AI Agent from Scratch with OpenAI and Postgres
+Piyush Garg
+https://www.youtube.com/watch?v=kRR1K3q5nlg
+
+Building AI Agent for Webpage Support
+Piyush Garg
+https://www.youtube.com/watch?v=SI7gdRQcGSY
+
+Build AI Agents with Langgraph, Langchain and Langsmith - Javascript
+Piyush Garg
+https://www.youtube.com/watch?v=_XMwQ5X3llA
+
+MCP Servers - Next Big Thing in AI
+Piyush Garg
+https://www.youtube.com/watch?v=vYelTr1uQmA
+
+How to Build Your First AI Agent – A Beginner’s Tutorial | Hindi
+Coder's Gyan
+https://www.youtube.com/watch?v=qsxhf1TdOTs
+
+Build AI Chat with PDF App with Next.js and Vector DB
+Piyush Garg
+https://www.youtube.com/watch?v=2DXiOtEwWtU&t=1s
+
+Build AI Agents with Langgraph, Langchain and Langsmith - Javascript
+Piyush Garg
+https://www.youtube.com/watch?v=_XMwQ5X3llA
