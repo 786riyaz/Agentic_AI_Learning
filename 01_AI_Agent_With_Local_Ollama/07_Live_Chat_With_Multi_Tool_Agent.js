@@ -196,6 +196,8 @@ Rules:
  */
 async function processUserMessage(userInput) {
   messages.push({ role: "user", content: userInput });
+  console.log("DEBUG: User message added to conversation.");
+  console.log("DEBUG: Current conversation state:", JSON.stringify(messages, null, 2));
 
   while (true) {
     const response = await client.chat.completions.create({
@@ -205,6 +207,7 @@ async function processUserMessage(userInput) {
       tools,
     });
 
+    console.log("DEBUG: Model response:", JSON.stringify(response, null, 2));
     const choice = response.choices[0];
 
     /**
@@ -290,8 +293,6 @@ async function startChat() {
  * ------------------------------------------------------------
  */
 startChat();
-
-
 
 /*
 🤖 AI Agent Ready (Stateful). Type 'exit' to quit.
