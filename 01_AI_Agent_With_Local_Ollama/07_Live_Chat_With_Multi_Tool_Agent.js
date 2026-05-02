@@ -22,6 +22,7 @@ import readline from "node:readline";
  * ------------------------------------------------------------
  */
 const client = new OpenAI({
+  // baseURL: "https://0d137nlv-11434.inc1.devtunnels.ms/v1",
   baseURL: "http://localhost:11434/v1",
   apiKey: "ollama",
 });
@@ -199,6 +200,7 @@ async function processUserMessage(userInput) {
   while (true) {
     const response = await client.chat.completions.create({
       model: "qwen2.5",
+      // model: "qwen3-coder:30b",
       messages,
       tools,
     });
