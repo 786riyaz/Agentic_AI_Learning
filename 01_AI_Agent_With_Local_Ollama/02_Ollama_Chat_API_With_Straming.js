@@ -24,3 +24,8 @@ while (true) {
     process.stdout.write(json.message?.content || "");
   }
 }
+
+
+/*
+The capital of France is Paris.
+*/

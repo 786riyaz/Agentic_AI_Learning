@@ -58,3 +58,17 @@ console.log("Assistant :: ", data2.message.content);
 console.log(
   "======================================================================",
 );
+
+
+/*
+======================================================================
+User ::  What is the capital of France?
+Assistant ::  The capital of France is Paris.
+======================================================================
+User ::  What is the capital of Germany?
+Assistant ::  The capital of Germany is Berlin.
+======================================================================
+User ::  What is the capital of Japan?
+Assistant ::  The capital of Japan is Tokyo (). It has been the country's capital since 1868.
+======================================================================
+*/

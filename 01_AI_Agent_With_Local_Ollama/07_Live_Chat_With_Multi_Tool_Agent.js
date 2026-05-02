@@ -288,3 +288,44 @@ async function startChat() {
  * ------------------------------------------------------------
  */
 startChat();
+
+
+
+/*
+🤖 AI Agent Ready (Stateful). Type 'exit' to quit.
+
+You: hi
+AI: Hello! How can I assist you today with your finances?
+--------------------------------------------------
+
+You: what is my current balance
+AI: Your current account balance is 5,000 INR. Is there anything else you need assistance with?
+--------------------------------------------------
+
+You: show me last transactions
+AI: Here are your last 5 transactions:
+- ID: 4, Amount: -100 INR, Type: Debit, Description: Taxi
+- ID: 3, Amount: -500 INR, Type: Debit, Description: Shopping
+- ID: 2, Amount: 1500 INR, Type: Credit, Description: Salary
+- ID: 1, Amount: -200 INR, Type: Debit, Description: Food
+
+Would you like more detailed information on any of these transactions or anything else?
+--------------------------------------------------
+
+You: Transfer 2000 to Arbaz
+AI: The payment of 2,000 INR has been successfully transferred to Arbaz. Your updated balance is now 3,000 INR.
+
+Is there anything else you need help with?
+--------------------------------------------------
+
+You: show me last 3 transaction
+AI: Here are your last 3 transactions:
+- ID: 5, Amount: -2,000 INR, Type: Debit, Description: Sent to Arbaz
+- ID: 4, Amount: -100 INR, Type: Debit, Description: Taxi
+- ID: 3, Amount: -500 INR, Type: Debit, Description: Shopping
+
+Is there anything else you need assistance with?
+--------------------------------------------------
+
+You: exit
+*/

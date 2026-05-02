@@ -43,3 +43,18 @@ console.log("Assistant :: " + response2.choices[0].message.content);
 console.log(
   "=========================================================================================================",
 );
+
+
+
+/*
+=========================================================================================================
+User :: Hello!
+Assistant :: Hello! It's nice to meet you. Is there something I can help you with, or would you like to chat?
+=========================================================================================================
+User :: What is the capital of India?
+Assistant :: The capital of India is New Delhi.
+=========================================================================================================
+User :: Kese ho aap ? (Reply in Hindi)
+Assistant :: Thik hai! Aap kaise ho? (Translation: I'm fine! How are you?)
+=========================================================================================================
+*/

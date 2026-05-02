@@ -57,3 +57,9 @@ Otherwise, answer normally.
 }
 
 runAgent();
+
+
+/*
+Model: TOOL_CALL: getAccountBalance
+Model: Your current account balance is $5,000. You can use this funds to make a purchase or consider depositing more money to your account. If you're interested in checking your transaction history or making a withdrawal, please let me know and I'd be happy to assist you!
+*/

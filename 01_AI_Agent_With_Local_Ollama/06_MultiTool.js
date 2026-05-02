@@ -247,3 +247,8 @@ Be precise and professional.
  * ------------------------------------------------------------
  */
 runAgent();
+
+
+/*
+The payment of 1000 INR has been successfully sent to Rahul. Your current account balance is 5000 INR.
+*/
