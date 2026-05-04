@@ -1,0 +1,376 @@
+# 📘 AI & LLM Engineering — Complete Notes (Interview + Practical Guide)
+
+---
+
+# 🔥 1. Core Mental Model
+
+```text
+LLM → thinks
+Tools → acts
+Memory → remembers
+Agent → combines all
+Agentic AI → scales it
+```
+
+---
+
+# 🤖 2. OpenAI Models Overview
+
+## 🔹 OpenAI Model Types
+
+### GPT Models (General Purpose)
+
+| Model   | Strength                              |
+| ------- | ------------------------------------- |
+| GPT-4.1 | Strong coding, structured reasoning   |
+| GPT-4o  | Fast, multimodal (text, image, audio) |
+
+👉 Use:
+
+* 4.1 → backend, coding, logic
+* 4o → chat apps, real-time UX
+
+---
+
+### Reasoning Models
+
+| Model    | Strength                       |
+| -------- | ------------------------------ |
+| o4       | Deep reasoning, math, planning |
+| 4.1 mini | Cheap + balanced               |
+
+👉 Think:
+
+* GPT = fast intuition
+* Reasoning models = slow thinking
+
+---
+
+# 🌍 3. Other AI Model Providers
+
+* Anthropic → Claude (long context, safe outputs)
+* DeepSeek → cheap + strong reasoning
+* Alibaba Cloud → Qwen (open + multilingual)
+
+---
+
+# 🧠 4. Core LLM Concepts
+
+## 🔹 Inference
+
+Model generating output from input.
+
+---
+
+## 🔹 Context Window / Context Length
+
+Maximum tokens model can handle.
+
+---
+
+## 🔹 Max Completion Tokens
+
+Maximum output tokens.
+
+---
+
+## 🔹 Temperature
+
+| Value | Behavior      |
+| ----- | ------------- |
+| 0.0   | deterministic |
+| 0.7   | balanced      |
+| 1.0+  | creative      |
+
+---
+
+# 🧩 5. Tokens & Tokenization 
+
+* Text → tokens
+* 1 token ≈ 3–4 chars
+* Impacts:
+
+  * cost
+  * limits
+  * performance
+
+---
+
+# 🧠 6. Prompt Engineering 
+
+### Basics
+
+* Clear instructions
+* Role-based prompts
+* Few-shot examples
+
+### Advanced
+
+* Prompt chaining
+* ReAct pattern
+* Self-consistency
+
+---
+
+# 🔎 7. Embeddings & Vector DB 
+
+## Embeddings
+
+Text → vector (semantic meaning)
+
+## Vector DBs
+
+* Pinecone
+* Weaviate
+* FAISS
+
+---
+
+# 📚 8. RAG (Retrieval-Augmented Generation) 
+
+```text
+User Query
+   ↓
+Embedding
+   ↓
+Vector Search
+   ↓
+Context
+   ↓
+LLM Response
+```
+
+### Benefits:
+
+* Reduces hallucination
+* Uses real-time data
+* Supports private data
+
+---
+
+# ⚠️ 9. Hallucination 
+
+### Causes:
+
+* Missing data
+* Ambiguity
+
+### Fix:
+
+* RAG
+* tools
+* validation
+
+---
+
+# ⚙️ 10. Tool Calling 
+
+LLM → calls external APIs
+
+Used in:
+
+* AI agents
+* automation
+
+---
+
+# 🧠 11. Memory 
+
+| Type       | Description    |
+| ---------- | -------------- |
+| Short-term | Context window |
+| Long-term  | External DB    |
+
+---
+
+# 💰 12. Cost, Latency, Scaling 
+
+* Latency = response time
+* Cost = tokens
+* Throughput = scale
+
+---
+
+# 📊 13. Evaluation (Evals) 
+
+* Human testing
+* Automated tests
+* Benchmarks
+
+---
+
+# 🛡️ 14. Guardrails & Safety 
+
+* Output validation
+* JSON schema
+* Moderation
+
+---
+
+# 🤖 15. AI Agent vs LLM vs Agentic AI
+
+| Concept    | Meaning             |
+| ---------- | ------------------- |
+| LLM        | Only thinking       |
+| Agent      | Thinking + acting   |
+| Agentic AI | Multi-agent systems |
+
+---
+
+## ✅ Correct Definition
+
+```text
+AI Agent =
+    LLM
+  + Tools
+  + Memory
+  + Planning
+  + Execution Loop
+```
+
+---
+
+# 🔌 16. MCP (Model Context Protocol)
+
+Developed by:
+
+* Anthropic
+
+### Purpose:
+
+Standard way to connect:
+
+* tools
+* APIs
+* data
+
+👉 Like USB for AI
+
+---
+
+# ⚔️ 17. LangChain vs MCP vs OpenAI APIs 
+
+## 🔹 Overview
+
+| Tool       | Type      |
+| ---------- | --------- |
+| OpenAI API | Low-level |
+| LangChain  | Framework |
+| MCP        | Protocol  |
+
+---
+
+## 🔹 Comparison
+
+| Feature     | OpenAI API | LangChain   | MCP              |
+| ----------- | ---------- | ----------- | ---------------- |
+| Control     | Full       | Medium      | Indirect         |
+| Abstraction | None       | High        | Standardized     |
+| Debugging   | Easy       | Hard        | Medium           |
+| Use Case    | Production | Prototyping | Scalable systems |
+
+---
+
+## 🔹 Real Architecture
+
+```text
+Frontend
+   ↓
+Backend
+   ↓
+OpenAI API
+   ↓
+MCP
+   ↓
+Tools / DB
+```
+
+---
+
+# 🧱 18. Orchestration Frameworks 
+
+* LangChain
+* LlamaIndex
+* Semantic Kernel
+
+---
+
+# 🔄 19. Streaming
+
+* Token-by-token output
+* Improves UX
+
+---
+
+# 🎯 20. Structured Output 
+
+Force JSON responses:
+
+```json
+{
+  "name": "product",
+  "price": 100
+}
+```
+
+---
+
+# 🎲 21. Determinism vs Randomness 
+
+* LLM = probabilistic
+* Use temperature to control
+
+---
+
+# 📦 22. Chunking & Compression 
+
+* Split large data
+* Use in RAG
+
+---
+
+# 🧠 23. System Design (CRITICAL) 
+
+```text
+Frontend
+  ↓
+Backend
+  ↓
+LLM
+  ↓
+Tools / APIs / DB
+```
+
+---
+
+# 🚀 24. Learning Roadmap
+
+1. Prompt engineering
+2. Tokens & cost
+3. Embeddings
+4. RAG
+5. Tool calling
+6. AI agents
+7. Evaluation
+8. Scaling
+
+---
+
+# 🔥 25. Industry Trend
+
+```text
+LangChain (past hype)
+        ↓
+Raw APIs (present)
+        ↓
+MCP + Agents (future)
+```
+
+---
+
+# ✅ Final Insight
+
+* Don’t overuse frameworks
+* Understand **core primitives first**
+* Build systems, not just prompts
+
