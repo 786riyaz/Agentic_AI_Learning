@@ -1,0 +1,17 @@
+OpenAI is an artificial intelligence company focused on developing advanced AI models and research. The CEO of OpenAI is Sam Altman.
+
+Google is a multinational technology company specializing in search, cloud computing, and AI. The CEO of Google is Sundar Pichai.
+
+Microsoft is a global technology company known for software, cloud services, and enterprise solutions. The CEO of Microsoft is Satya Nadella.
+
+OpenAI develops models like GPT for natural language processing and generative AI applications.
+
+Google owns products like Gmail, YouTube, and Google Cloud Platform.
+
+Microsoft develops products like Windows, Azure, and Microsoft Office.
+
+Sam Altman has been instrumental in scaling OpenAI and advancing AI safety initiatives.
+
+Sundar Pichai has led Google through significant growth in AI and cloud computing.
+
+Satya Nadella transformed Microsoft into a cloud-first company with Azure as a core offering.
