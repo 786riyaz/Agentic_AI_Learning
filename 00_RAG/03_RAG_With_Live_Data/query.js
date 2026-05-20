@@ -13,12 +13,16 @@ const client = await weaviate.connectToCustom({
 
 const collection = client.collections.get("Documents");
 
-async function ask(query, opts = {}) {
+// 🔥 CHAT MEMORY
+let chatHistory = [];
+
+export async function ask(query, opts = {}) {
   const { category, entity, limit = 3 } = opts;
 
   const queryVector = await getEmbedding(query);
 
   const filters = [];
+
   if (category) {
     filters.push({
       path: ["category"],
@@ -26,6 +30,7 @@ async function ask(query, opts = {}) {
       valueText: category,
     });
   }
+
   if (entity) {
     filters.push({
       path: ["entity"],
@@ -38,8 +43,8 @@ async function ask(query, opts = {}) {
     filters.length === 0
       ? undefined
       : filters.length === 1
-        ? filters[0]
-        : { operator: "And", operands: filters };
+      ? filters[0]
+      : { operator: "And", operands: filters };
 
   const result = await collection.query.hybrid(query, {
     vector: queryVector,
@@ -48,47 +53,73 @@ async function ask(query, opts = {}) {
     where,
   });
 
-  console.log("\n🔍 Retrieved documents:\n", result.objects);
-
   const context = [
     ...new Set(result.objects.map((o) => o.properties.text)),
   ].join("\n");
 
-  console.log("\n📚 Context:\n", context);
+  // 🔥 HISTORY
+  const historyText = chatHistory
+    .map((h) => `User: ${h.q}\nAssistant: ${h.a}`)
+    .join("\n");
 
   const prompt = `
 You are a helpful assistant.
 
+Conversation so far:
+${historyText}
+
 Context:
 ${context}
 
-Question:
+User Question:
 ${query}
 
 If the answer is not in the context, say "I don't know".
+
 Answer clearly:
 `;
 
-  const res = await axios.post("http://localhost:11434/api/generate", {
-    model: "llama3",
-    prompt,
-    stream: false,
+  // 🔥 STREAMING RESPONSE
+  const res = await axios.post(
+    "http://localhost:11434/api/generate",
+    {
+      model: "llama3",
+      prompt,
+      stream: true,
+    },
+    {
+      responseType: "stream",
+    }
+  );
+
+  process.stdout.write("\n🧠 Answer:\n");
+
+  let finalAnswer = "";
+
+  res.data.on("data", (chunk) => {
+    const lines = chunk.toString().split("\n").filter(Boolean);
+
+    for (const line of lines) {
+      const parsed = JSON.parse(line);
+
+      if (parsed.response) {
+        process.stdout.write(parsed.response);
+        finalAnswer += parsed.response;
+      }
+    }
   });
 
-  console.log("\n🧠 Answer:\n", res.data.response);
-}
+  await new Promise((resolve) => {
+    res.data.on("end", resolve);
+  });
 
-// Examples:
-// await ask("Who is the best finisher in Indian cricket?", {
-//   category: "sports",
-// });
-// await ask("Who is the CEO of OpenAI?", {
-//   category: "company",
-//   entity: "openai",
-// });
-// await ask("Who is the best Indian cricket?", {
-//   category: "sports",
-// });
-await ask("Who is the best Indian cricket among Dhoni, Sachin and Kohli?", {
-  category: "sports",
-});
+  console.log("\n");
+
+  // 🔥 SAVE MEMORY
+  chatHistory.push({ q: query, a: finalAnswer });
+
+  // 🔥 LIMIT MEMORY
+  if (chatHistory.length > 5) {
+    chatHistory.shift();
+  }
+}

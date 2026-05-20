@@ -16,7 +16,6 @@ const client = await weaviate.connectToCustom({
 
 const collection = client.collections.get("Documents");
 
-// simple mapper to assign metadata by file
 function inferMeta(fileName, chunk) {
   const lower = chunk.toLowerCase();
 
@@ -57,10 +56,8 @@ for (const file of files) {
 
   for (const chunk of chunks) {
     const { category, entity } = inferMeta(file, chunk);
+    const id = makeId(chunk, file);
 
-    const id = makeId(chunk, file); // deterministic
-
-    // try insert (idempotent): if exists, skip
     try {
       const embedding = await getEmbedding(chunk);
 
@@ -77,15 +74,13 @@ for (const file of files) {
 
       inserted++;
     } catch (e) {
-      // duplicate UUID → skip
       if (String(e.message).includes("already exists")) {
         skipped++;
       } else {
-        console.error("❌ Insert error FULL:", e);
-        console.error("❌ Insert error:", JSON.stringify(e, null, 2));
+        console.error("❌ Insert error:", e);
       }
     }
   }
 }
 
-console.log(`\n✅ Ingestion done | inserted=${inserted} skipped=${skipped}`);
+console.log(`\n✅ Done | inserted=${inserted} skipped=${skipped}`);
