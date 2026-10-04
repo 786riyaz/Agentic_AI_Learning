@@ -1,0 +1,53 @@
+Ollama Model Links
+=====================================
+ollama pull deepseek-coder:6.7b
+ollama pull gemma3:4b
+ollama pull gemma4:12b
+ollama pull gemma4:e2b
+ollama pull kimi-k3
+ollama pull qwen2.5-coder:7b
+ollama pull qwen3.6:27b
+ollama pull qwen3:14b
+ollama pull qwen3:8b
+ollama pull qwen3-coder:30b
+ollama pull qwen3-coder-next
+ollama pull qwen3-embedding
+ollama pull sqlcoder:7b
+ollama run deepseek-v4-pro:cloud
+ollama run glm-5.3:cloud
+ollama run kimi-k3:cloud
+=====================================
+https://ollama.com/library/deepseek-coder-v2
+https://ollama.com/library/deepseek-ocr
+https://ollama.com/library/deepseek-r1
+https://ollama.com/library/deepseek-v4-pro
+
+https://ollama.com/library/gemma3
+https://ollama.com/library/gemma4
+
+https://ollama.com/library/glm-5.3
+https://ollama.com/library/glm-5.3-flash
+https://ollama.com/library/glm-ocr
+
+https://ollama.com/library/kimi-k2.7-code
+https://ollama.com/library/kimi-k3
+
+https://ollama.com/library/llama3
+https://ollama.com/library/llama3.1
+https://ollama.com/library/llama3.2
+https://ollama.com/library/llama3.2-vision
+https://ollama.com/library/llama3.3
+https://ollama.com/library/llama4
+
+https://ollama.com/library/minimax-m3
+
+https://ollama.com/library/qwen2.5-coder
+https://ollama.com/library/qwen3
+https://ollama.com/library/qwen3.5
+https://ollama.com/library/qwen3.6
+https://ollama.com/library/qwen3.8
+https://ollama.com/library/qwen3.8-flash-next
+https://ollama.com/library/qwen3-coder
+https://ollama.com/library/qwen3-embedding
+
+https://ollama.com/library/sqlcoder

@@ -1,0 +1,6 @@
+set OLLAMA_LLM_LIBRARY=cpu_avx2
+
+echo %OLLAMA_LLM_LIBRARY%
+	cpu_avx2
+
+ollama serve
